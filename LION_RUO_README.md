@@ -1,0 +1,104 @@
+# Lion RUO client preview — drop-in for The Ark
+
+This folder contains the approved Lion RUO one-page storefront concept plus its separate checkout screen.
+
+## Where it goes
+
+Copy the contents of this package into the **root of your existing The Ark Next.js repo**.
+
+It adds new files only; it does not replace your existing `/` homepage.
+
+After copying, the preview routes are:
+
+```text
+https://theark.io/lion-ruo
+https://theark.io/lion-ruo/checkout
+```
+
+Both routes are configured `noindex` so this client preview does not become a searchable page on The Ark.
+
+## Added project structure
+
+```text
+app/
+  lion-ruo/
+    _components/
+      icons.tsx
+      lion-brand.tsx
+      lion-checkout.tsx
+      lion-footer.tsx
+      lion-header.tsx
+      lion-storefront.tsx
+      product-thumb.tsx
+    checkout/
+      page.tsx
+    layout.tsx
+    lion-ruo.module.css
+    page.tsx
+
+content/
+  lion-ruo/
+    products.json
+    site-content.json
+    faqs.json
+
+lib/
+  lion-ruo/
+    cart.ts
+    content.ts
+    types.ts
+
+public/
+  client-previews/
+    lion-ruo/
+      lion-ruo-logo.png
+      nad-500mg.webp
+      glow-70mg.webp
+```
+
+## Current behavior
+
+- One-page homepage
+- 3 catalog cards per row on desktop
+- 9 products per catalog page (3 rows)
+- Pagination under catalog
+- Product descriptions on homepage cards
+- Add-to-checkout buttons persist with `localStorage`
+- Header checkout count updates immediately
+- Separate checkout route
+- Checkout order summary includes product descriptions
+- Checkout form does not collect payment
+- Without an order endpoint, submit is simulated for the client preview
+- Responsive 3 → 2 → 1 column product layout
+- Client-supplied Lion logo, NAD+ photo, and Glow photo included
+- Products without supplied photography use a neutral branded vial placeholder
+
+## Run it
+
+From the existing The Ark repo:
+
+```bash
+pnpm dev
+```
+
+Then open:
+
+```text
+http://localhost:3000/lion-ruo
+```
+
+Before pushing:
+
+```bash
+pnpm build
+```
+
+## WordPress
+
+See `WORDPRESS_MAPPING.md`.
+
+The JSON is deliberately shaped like WordPress REST responses with ACF fields so you can replace static JSON with headless WordPress later without rebuilding the React components.
+
+## Important launch note
+
+The product names, prices, purity values, lot numbers, testing statements, legal language, contact information, and compliance claims in this preview are sample/client-concept content. They must be replaced or approved by the client before any production launch.

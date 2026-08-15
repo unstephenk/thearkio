@@ -1,0 +1,38 @@
+[
+  {
+    "id": 301,
+    "slug": "are-products-laboratory-tested",
+    "status": "publish",
+    "type": "faq",
+    "menu_order": 1,
+    "title": { "rendered": "Are your products laboratory tested?" },
+    "acf": { "answer": "The design supports lot-specific purity and COA fields for every catalog item. Final testing claims should be populated only from documentation supplied and approved by the client." }
+  },
+  {
+    "id": 302,
+    "slug": "what-is-a-coa",
+    "status": "publish",
+    "type": "faq",
+    "menu_order": 2,
+    "title": { "rendered": "What is a Certificate of Analysis (COA)?" },
+    "acf": { "answer": "A COA is a lot-specific document that can be linked directly from a product record. The WordPress-ready data model includes a dedicated COA URL for each product." }
+  },
+  {
+    "id": 303,
+    "slug": "research-use-only",
+    "status": "publish",
+    "type": "faq",
+    "menu_order": 3,
+    "title": { "rendered": "Are these products for human use?" },
+    "acf": { "answer": "No. This concept consistently labels the catalog as Research Use Only and not for human or veterinary consumption." }
+  },
+  {
+    "id": 304,
+    "slug": "how-does-checkout-work",
+    "status": "publish",
+    "type": "faq",
+    "menu_order": 4,
+    "title": { "rendered": "How does checkout work?" },
+    "acf": { "answer": "Items are stored in the browser as a checkout list. The checkout form collects contact, shipping, and order-note information. Payment is not collected by this preview." }
+  }
+]

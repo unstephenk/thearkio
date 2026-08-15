@@ -1,0 +1,103 @@
+{
+  "id": 201,
+  "slug": "lion-home",
+  "status": "publish",
+  "type": "page",
+  "title": { "rendered": "Lion RUO Peptides" },
+  "content": { "rendered": "" },
+  "acf": {
+    "brand": {
+      "name": "Lion",
+      "descriptor": "RUO PEPTIDES",
+      "logo_url": "/client-previews/lion-ruo/lion-ruo-logo.png"
+    },
+    "navigation": [
+      { "label": "Catalog", "href": "#catalog" },
+      { "label": "Verification", "href": "#verification" },
+      { "label": "FAQ", "href": "#faq" }
+    ],
+    "hero": {
+      "eyebrow": "Batch-tested · Research use only",
+      "title": "Research peptides, verified to the",
+      "accent": "microgram.",
+      "description": "Laboratory-grade research compounds for in-vitro study. Product and lot documentation can be presented alongside each catalog item.",
+      "primary_cta_label": "Shop Catalog",
+      "primary_cta_href": "#catalog",
+      "image_url": "/client-previews/lion-ruo/nad-500mg.webp"
+    },
+    "trust_items": [
+      { "icon": "shield", "title": "Batch-tested", "text": "Lot documentation available" },
+      { "icon": "certificate", "title": "Certificate of Analysis", "text": "COA-ready catalog structure" },
+      { "icon": "spark", "title": "High purity", "text": "Purity shown by product" },
+      { "icon": "flask", "title": "Research Use Only", "text": "Not for human consumption" }
+    ],
+    "catalog": {
+      "eyebrow": "Catalog",
+      "heading": "Research catalog",
+      "description": "Laboratory-grade research products presented three per row with descriptions, lot details, and a persistent checkout list.",
+      "per_page": 9
+    },
+    "verification_cards": [
+      {
+        "icon": "certificate",
+        "title": "Every lot comes with documentation",
+        "text": "The catalog is structured to attach a certificate of analysis and lot data to each product when supplied.",
+        "link_label": "Verification",
+        "link_href": "#verification"
+      },
+      {
+        "icon": "shield",
+        "title": "Verified. Pure. Traceable.",
+        "text": "Purity, lot number, format, and storage fields are content-managed rather than hard-coded into the design.",
+        "link_label": "View catalog",
+        "link_href": "#catalog"
+      },
+      {
+        "icon": "flask",
+        "title": "Research Use Only",
+        "text": "Products and site content are presented for laboratory and in-vitro research use only.",
+        "link_label": "Read FAQ",
+        "link_href": "#faq"
+      }
+    ],
+    "checkout": {
+      "heading": "Checkout",
+      "payment_note": "Payment is not collected on this page. The request can be routed to WordPress, email, or another fulfillment workflow after submission.",
+      "submit_label": "Place Order",
+      "success_heading": "Order request received",
+      "success_text": "This preview stores no payment information. In production, the submission can be sent to the client's WordPress/order workflow."
+    },
+    "footer": {
+      "description": "Research products presented with clear lot, purity, and documentation fields. For laboratory research use only.",
+      "legal": "Research Use Only — not for human or veterinary use or consumption. Product claims and compliance language should be reviewed and approved by the client before launch.",
+      "email": "info@lionruopeptides.com",
+      "instagram": "@lionruopeptides",
+      "groups": [
+        {
+          "heading": "Shop",
+          "links": [
+            { "label": "Catalog", "href": "#catalog" },
+            { "label": "All products", "href": "#catalog" },
+            { "label": "New arrivals", "href": "#catalog" }
+          ]
+        },
+        {
+          "heading": "Support",
+          "links": [
+            { "label": "Verification", "href": "#verification" },
+            { "label": "FAQ", "href": "#faq" },
+            { "label": "Contact", "href": "mailto:info@lionruopeptides.com" }
+          ]
+        },
+        {
+          "heading": "Company",
+          "links": [
+            { "label": "About", "href": "#verification" },
+            { "label": "Quality", "href": "#verification" },
+            { "label": "Privacy Policy", "href": "#" }
+          ]
+        }
+      ]
+    }
+  }
+}
