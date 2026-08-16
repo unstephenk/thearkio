@@ -3,8 +3,12 @@
   "slug": "lion-home",
   "status": "publish",
   "type": "page",
-  "title": { "rendered": "Lion RUO Peptides" },
-  "content": { "rendered": "" },
+  "title": {
+    "rendered": "Lion RUO Peptides"
+  },
+  "content": {
+    "rendered": ""
+  },
   "acf": {
     "brand": {
       "name": "Lion",
@@ -12,12 +16,21 @@
       "logo_url": "/client-previews/lion-ruo/lion-ruo-logo.png"
     },
     "navigation": [
-      { "label": "Catalog", "href": "#catalog" },
-      { "label": "Verification", "href": "#verification" },
-      { "label": "FAQ", "href": "#faq" }
+      {
+        "label": "Catalog",
+        "href": "#catalog"
+      },
+      {
+        "label": "Verification",
+        "href": "#verification"
+      },
+      {
+        "label": "FAQ",
+        "href": "#faq"
+      }
     ],
     "hero": {
-      "eyebrow": "Batch-tested · Research use only",
+      "eyebrow": "Batch-tested \u00b7 Research use only",
       "title": "Research peptides, verified to the",
       "accent": "microgram.",
       "description": "Laboratory-grade research compounds for in-vitro study. Product and lot documentation can be presented alongside each catalog item.",
@@ -26,10 +39,26 @@
       "image_url": "/client-previews/lion-ruo/nad-500mg.webp"
     },
     "trust_items": [
-      { "icon": "shield", "title": "Batch-tested", "text": "Lot documentation available" },
-      { "icon": "certificate", "title": "Certificate of Analysis", "text": "COA-ready catalog structure" },
-      { "icon": "spark", "title": "High purity", "text": "Purity shown by product" },
-      { "icon": "flask", "title": "Research Use Only", "text": "Not for human consumption" }
+      {
+        "icon": "shield",
+        "title": "Batch-tested",
+        "text": "Lot documentation available"
+      },
+      {
+        "icon": "certificate",
+        "title": "Certificate of Analysis",
+        "text": "COA-ready catalog structure"
+      },
+      {
+        "icon": "spark",
+        "title": "High purity",
+        "text": "Purity shown by product"
+      },
+      {
+        "icon": "flask",
+        "title": "Research Use Only",
+        "text": "Not for human consumption"
+      }
     ],
     "catalog": {
       "eyebrow": "Catalog",
@@ -67,34 +96,69 @@
       "success_heading": "Order request received",
       "success_text": "This preview stores no payment information. In production, the submission can be sent to the client's WordPress/order workflow."
     },
+    "newsletter": {
+      "heading": "Get 10% off your first order",
+      "description": "Join the list for restock alerts, new COA postings, and subscriber-only pricing.",
+      "placeholder": "you@email.com",
+      "submit_label": "Get my code",
+      "success_text": "You\u2019re on the list. Your 10% welcome offer will be delivered by email once the newsletter integration is connected.",
+      "error_text": "We couldn\u2019t add you to the list right now. Please try again."
+    },
     "footer": {
       "description": "Research products presented with clear lot, purity, and documentation fields. For laboratory research use only.",
-      "legal": "Research Use Only — not for human or veterinary use or consumption. Product claims and compliance language should be reviewed and approved by the client before launch.",
+      "legal": "Research Use Only \u2014 not for human or veterinary use or consumption. Product claims and compliance language should be reviewed and approved by the client before launch.",
       "email": "info@lionruopeptides.com",
       "instagram": "@lionruopeptides",
       "groups": [
         {
           "heading": "Shop",
           "links": [
-            { "label": "Catalog", "href": "#catalog" },
-            { "label": "All products", "href": "#catalog" },
-            { "label": "New arrivals", "href": "#catalog" }
+            {
+              "label": "Catalog",
+              "href": "#catalog"
+            },
+            {
+              "label": "All products",
+              "href": "#catalog"
+            },
+            {
+              "label": "New arrivals",
+              "href": "#catalog"
+            }
           ]
         },
         {
           "heading": "Support",
           "links": [
-            { "label": "Verification", "href": "#verification" },
-            { "label": "FAQ", "href": "#faq" },
-            { "label": "Contact", "href": "mailto:info@lionruopeptides.com" }
+            {
+              "label": "Verification",
+              "href": "#verification"
+            },
+            {
+              "label": "FAQ",
+              "href": "#faq"
+            },
+            {
+              "label": "Contact",
+              "href": "mailto:info@lionruopeptides.com"
+            }
           ]
         },
         {
           "heading": "Company",
           "links": [
-            { "label": "About", "href": "#verification" },
-            { "label": "Quality", "href": "#verification" },
-            { "label": "Privacy Policy", "href": "#" }
+            {
+              "label": "About",
+              "href": "#verification"
+            },
+            {
+              "label": "Quality",
+              "href": "#verification"
+            },
+            {
+              "label": "Privacy Policy",
+              "href": "#"
+            }
           ]
         }
       ]

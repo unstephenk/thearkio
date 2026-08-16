@@ -15,6 +15,7 @@ import {
 } from "./icons";
 import { LionFooter } from "./lion-footer";
 import { LionHeader } from "./lion-header";
+import { LionNewsletter } from "./lion-newsletter";
 import { ProductThumb } from "./product-thumb";
 import styles from "../lion-ruo.module.css";
 
@@ -44,8 +45,8 @@ export function LionStorefront({ products, faqs, content }: Props) {
   const pageCount = Math.max(1, Math.ceil(products.length / perPage));
   const [page, setPage] = useState(1);
   const [cart, setCart] = useState<CartLine[]>([]);
-  const [toast, setToast] = useState<string | null>(null);
   const [cartReady, setCartReady] = useState(false);
+  const [toast, setToast] = useState<string | null>(null);
 
   useEffect(() => {
     setCart(readCart());
@@ -70,16 +71,12 @@ export function LionStorefront({ products, faqs, content }: Props) {
 
   const addToCheckout = (product: Product) => {
     setCart((current) => {
-      const existing = current.find(
-        (line) => line.productId === product.id,
-      );
+      const existing = current.find((line) => line.productId === product.id);
 
       return existing
         ? current.map((line) =>
-          line.productId === product.id
-            ? { ...line, quantity: line.quantity + 1 }
-            : line,
-        )
+            line.productId === product.id ? { ...line, quantity: line.quantity + 1 } : line,
+          )
         : [...current, { productId: product.id, quantity: 1 }];
     });
 
@@ -265,6 +262,8 @@ export function LionStorefront({ products, faqs, content }: Props) {
             </div>
           </div>
         </section>
+
+        <LionNewsletter content={content.newsletter} />
       </main>
 
       <LionFooter content={content} />

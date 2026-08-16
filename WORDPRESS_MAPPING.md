@@ -109,3 +109,16 @@ The checkout will POST JSON to that endpoint. A custom WordPress REST route can 
 4. return a success response.
 
 Do not place WordPress administrator credentials or secret API keys in `NEXT_PUBLIC_*` variables. The custom WordPress endpoint should implement its own validation, anti-spam controls, and authorization model.
+
+## Newsletter fields
+
+Add an ACF group to the `lion-home` page for:
+
+- `newsletter.heading`
+- `newsletter.description`
+- `newsletter.placeholder`
+- `newsletter.submit_label`
+- `newsletter.success_text`
+- `newsletter.error_text`
+
+The signup destination is intentionally separate from content retrieval. A custom WordPress REST endpoint such as `/wp-json/lion/v1/newsletter` can accept the submitted email and enroll it in the client's approved mailing-list workflow.

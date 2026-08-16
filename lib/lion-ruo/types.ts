@@ -112,6 +112,14 @@ export type SiteContentDocument = {
       success_heading: string;
       success_text: string;
     };
+    newsletter: {
+      heading: string;
+      description: string;
+      placeholder: string;
+      submit_label: string;
+      success_text: string;
+      error_text: string;
+    };
     footer: {
       description: string;
       legal: string;

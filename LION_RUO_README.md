@@ -102,3 +102,25 @@ The JSON is deliberately shaped like WordPress REST responses with ACF fields so
 ## Important launch note
 
 The product names, prices, purity values, lot numbers, testing statements, legal language, contact information, and compliance claims in this preview are sample/client-concept content. They must be replaced or approved by the client before any production launch.
+
+## Newsletter / 10% first-order offer
+
+The homepage includes a CMS-driven email signup section immediately before the footer. Its heading, description, placeholder, button label, and status copy live in `content/lion-ruo/site-content.json` under `acf.newsletter`.
+
+For the preview, the form shows a successful state without transmitting data when no endpoint is configured. To connect it later, set:
+
+```bash
+NEXT_PUBLIC_LION_NEWSLETTER_ENDPOINT=https://client-domain.com/wp-json/lion/v1/newsletter
+```
+
+The browser will POST:
+
+```json
+{
+  "email": "researcher@example.com",
+  "source": "lion-ruo-homepage",
+  "offer": "10-percent-first-order"
+}
+```
+
+The endpoint can be a custom WordPress REST route, an email marketing platform proxy, or another client-approved subscriber workflow.
