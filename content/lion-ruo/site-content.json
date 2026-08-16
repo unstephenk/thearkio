@@ -29,6 +29,16 @@
         "href": "#faq"
       }
     ],
+    "age_gate": {
+      "enabled": true,
+      "minimum_age": 18,
+      "heading": "Age confirmation required",
+      "description": "This website contains products intended solely for laboratory research. Please confirm that you meet the minimum age requirement to enter.",
+      "confirm_label": "I am 18 or older",
+      "leave_label": "Leave site",
+      "leave_href": "https://www.google.com/",
+      "storage_days": 30
+    },
     "hero": {
       "eyebrow": "Batch-tested \u00b7 Research use only",
       "title": "Research peptides, verified to the",
@@ -64,7 +74,10 @@
       "eyebrow": "Catalog",
       "heading": "Research catalog",
       "description": "Laboratory-grade research products presented three per row with descriptions, lot details, and a persistent checkout list.",
-      "per_page": 9
+      "per_page": 9,
+      "in_stock_label": "In stock",
+      "sold_out_label": "Sold out",
+      "low_stock_label": "Low stock"
     },
     "verification_cards": [
       {
@@ -94,7 +107,8 @@
       "payment_note": "Payment is not collected on this page. The request can be routed to WordPress, email, or another fulfillment workflow after submission.",
       "submit_label": "Place Order",
       "success_heading": "Order request received",
-      "success_text": "This preview stores no payment information. In production, the submission can be sent to the client's WordPress/order workflow."
+      "success_text": "This preview stores no payment information. In production, the submission can be sent to the client's WordPress/order workflow.",
+      "inventory_error": "One or more products in your checkout are sold out or exceed the currently available inventory. Return to the catalog and update your selection."
     },
     "newsletter": {
       "heading": "Get 10% off your first order",

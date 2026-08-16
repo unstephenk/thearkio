@@ -6,14 +6,20 @@
     "slug": "nad-plus-500mg",
     "status": "publish",
     "type": "peptide_product",
-    "title": { "rendered": "NAD+" },
-    "content": { "rendered": "<p>NAD+ reference material supplied as a lyophilized research reagent for controlled in-vitro laboratory workflows.</p>" },
-    "excerpt": { "rendered": "<p>Lyophilized reference material for controlled cellular-energy research workflows.</p>" },
+    "title": {
+      "rendered": "NAD+"
+    },
+    "content": {
+      "rendered": "<p>NAD+ reference material supplied as a lyophilized research reagent for controlled in-vitro laboratory workflows.</p>"
+    },
+    "excerpt": {
+      "rendered": "<p>Lyophilized reference material for controlled cellular-energy research workflows.</p>"
+    },
     "featured_media": 501,
     "acf": {
       "product_category": "Cellular",
       "size": "500mg",
-      "purity": "≥99.9%",
+      "purity": "\u226599.9%",
       "price": 89.99,
       "currency": "USD",
       "lot_number": "LR-NAD-2608",
@@ -21,7 +27,9 @@
       "format": "Lyophilized powder",
       "image_url": "/client-previews/lion-ruo/nad-500mg.webp",
       "coa_url": null,
-      "featured": true
+      "featured": true,
+      "stock_quantity": 12,
+      "low_stock_threshold": 3
     }
   },
   {
@@ -31,14 +39,20 @@
     "slug": "glow-70mg",
     "status": "publish",
     "type": "peptide_product",
-    "title": { "rendered": "Glow" },
-    "content": { "rendered": "<p>Multi-component lyophilized research reference supplied for analytical and in-vitro laboratory study.</p>" },
-    "excerpt": { "rendered": "<p>Multi-component reference material for analytical and in-vitro laboratory study.</p>" },
+    "title": {
+      "rendered": "Glow"
+    },
+    "content": {
+      "rendered": "<p>Multi-component lyophilized research reference supplied for analytical and in-vitro laboratory study.</p>"
+    },
+    "excerpt": {
+      "rendered": "<p>Multi-component reference material for analytical and in-vitro laboratory study.</p>"
+    },
     "featured_media": 502,
     "acf": {
       "product_category": "Dermal",
       "size": "70mg",
-      "purity": "≥99.8%",
+      "purity": "\u226599.8%",
       "price": 64.99,
       "currency": "USD",
       "lot_number": "LR-GLW-2608",
@@ -46,7 +60,9 @@
       "format": "Lyophilized powder",
       "image_url": "/client-previews/lion-ruo/glow-70mg.webp",
       "coa_url": null,
-      "featured": true
+      "featured": true,
+      "stock_quantity": 8,
+      "low_stock_threshold": 3
     }
   },
   {
@@ -56,14 +72,20 @@
     "slug": "tesamorelin-10mg",
     "status": "publish",
     "type": "peptide_product",
-    "title": { "rendered": "Tesamorelin" },
-    "content": { "rendered": "<p>Peptide reference standard supplied for qualified laboratory and analytical research applications.</p>" },
-    "excerpt": { "rendered": "<p>Peptide reference standard for qualified laboratory and analytical research.</p>" },
+    "title": {
+      "rendered": "Tesamorelin"
+    },
+    "content": {
+      "rendered": "<p>Peptide reference standard supplied for qualified laboratory and analytical research applications.</p>"
+    },
+    "excerpt": {
+      "rendered": "<p>Peptide reference standard for qualified laboratory and analytical research.</p>"
+    },
     "featured_media": 0,
     "acf": {
       "product_category": "Research",
       "size": "10mg",
-      "purity": "≥99.8%",
+      "purity": "\u226599.8%",
       "price": 119.99,
       "currency": "USD",
       "lot_number": "LR-TESA-2608",
@@ -71,7 +93,9 @@
       "format": "Lyophilized powder",
       "image_url": null,
       "coa_url": null,
-      "featured": true
+      "featured": true,
+      "stock_quantity": 5,
+      "low_stock_threshold": 3
     }
   },
   {
@@ -81,14 +105,20 @@
     "slug": "bpc-157-10mg",
     "status": "publish",
     "type": "peptide_product",
-    "title": { "rendered": "BPC-157" },
-    "content": { "rendered": "<p>Research peptide reference material for controlled in-vitro assay development and analytical workflows.</p>" },
-    "excerpt": { "rendered": "<p>Research peptide reference material for controlled in-vitro assay workflows.</p>" },
+    "title": {
+      "rendered": "BPC-157"
+    },
+    "content": {
+      "rendered": "<p>Research peptide reference material for controlled in-vitro assay development and analytical workflows.</p>"
+    },
+    "excerpt": {
+      "rendered": "<p>Research peptide reference material for controlled in-vitro assay workflows.</p>"
+    },
     "featured_media": 0,
     "acf": {
       "product_category": "Research",
       "size": "10mg",
-      "purity": "≥99.9%",
+      "purity": "\u226599.9%",
       "price": 59.99,
       "currency": "USD",
       "lot_number": "LR-BPC-2608",
@@ -96,7 +126,9 @@
       "format": "Lyophilized powder",
       "image_url": null,
       "coa_url": null,
-      "featured": true
+      "featured": true,
+      "stock_quantity": 3,
+      "low_stock_threshold": 3
     }
   },
   {
@@ -106,14 +138,20 @@
     "slug": "ghk-cu-50mg",
     "status": "publish",
     "type": "peptide_product",
-    "title": { "rendered": "GHK-Cu" },
-    "content": { "rendered": "<p>Copper-peptide reference material supplied for non-clinical analytical and in-vitro research use.</p>" },
-    "excerpt": { "rendered": "<p>Copper-peptide reference material for analytical and in-vitro research.</p>" },
+    "title": {
+      "rendered": "GHK-Cu"
+    },
+    "content": {
+      "rendered": "<p>Copper-peptide reference material supplied for non-clinical analytical and in-vitro research use.</p>"
+    },
+    "excerpt": {
+      "rendered": "<p>Copper-peptide reference material for analytical and in-vitro research.</p>"
+    },
     "featured_media": 0,
     "acf": {
       "product_category": "Dermal",
       "size": "50mg",
-      "purity": "≥99.8%",
+      "purity": "\u226599.8%",
       "price": 49.99,
       "currency": "USD",
       "lot_number": "LR-GHK-2608",
@@ -121,7 +159,9 @@
       "format": "Lyophilized powder",
       "image_url": null,
       "coa_url": null,
-      "featured": true
+      "featured": true,
+      "stock_quantity": 7,
+      "low_stock_threshold": 3
     }
   },
   {
@@ -131,14 +171,20 @@
     "slug": "repair-7-blend-10mg",
     "status": "publish",
     "type": "peptide_product",
-    "title": { "rendered": "Repair-7 Blend" },
-    "content": { "rendered": "<p>Multi-component research reference supplied for controlled laboratory study and analytical comparison.</p>" },
-    "excerpt": { "rendered": "<p>Multi-component research reference for controlled laboratory study.</p>" },
+    "title": {
+      "rendered": "Repair-7 Blend"
+    },
+    "content": {
+      "rendered": "<p>Multi-component research reference supplied for controlled laboratory study and analytical comparison.</p>"
+    },
+    "excerpt": {
+      "rendered": "<p>Multi-component research reference for controlled laboratory study.</p>"
+    },
     "featured_media": 0,
     "acf": {
       "product_category": "Recovery",
       "size": "10mg",
-      "purity": "≥99.8%",
+      "purity": "\u226599.8%",
       "price": 92.99,
       "currency": "USD",
       "lot_number": "LR-R7-2608",
@@ -146,7 +192,9 @@
       "format": "Lyophilized powder",
       "image_url": null,
       "coa_url": null,
-      "featured": false
+      "featured": false,
+      "stock_quantity": 4,
+      "low_stock_threshold": 3
     }
   },
   {
@@ -156,14 +204,20 @@
     "slug": "metaboline-rt-10mg",
     "status": "publish",
     "type": "peptide_product",
-    "title": { "rendered": "Metaboline-RT" },
-    "content": { "rendered": "<p>Reference compound supplied for analytical workflows involving metabolic signaling research models.</p>" },
-    "excerpt": { "rendered": "<p>Reference compound for metabolic-signaling analytical research models.</p>" },
+    "title": {
+      "rendered": "Metaboline-RT"
+    },
+    "content": {
+      "rendered": "<p>Reference compound supplied for analytical workflows involving metabolic signaling research models.</p>"
+    },
+    "excerpt": {
+      "rendered": "<p>Reference compound for metabolic-signaling analytical research models.</p>"
+    },
     "featured_media": 0,
     "acf": {
       "product_category": "Metabolic",
       "size": "10mg",
-      "purity": "≥99.9%",
+      "purity": "\u226599.9%",
       "price": 149.99,
       "currency": "USD",
       "lot_number": "LR-MRT-2608",
@@ -171,7 +225,9 @@
       "format": "Lyophilized powder",
       "image_url": null,
       "coa_url": null,
-      "featured": false
+      "featured": false,
+      "stock_quantity": 6,
+      "low_stock_threshold": 3
     }
   },
   {
@@ -181,14 +237,20 @@
     "slug": "cyclo-1295-duo-10mg",
     "status": "publish",
     "type": "peptide_product",
-    "title": { "rendered": "Cyclo-1295 Duo" },
-    "content": { "rendered": "<p>Dual-peptide analytical reference supplied for qualified laboratory research and comparison workflows.</p>" },
-    "excerpt": { "rendered": "<p>Dual-peptide analytical reference for qualified laboratory research.</p>" },
+    "title": {
+      "rendered": "Cyclo-1295 Duo"
+    },
+    "content": {
+      "rendered": "<p>Dual-peptide analytical reference supplied for qualified laboratory research and comparison workflows.</p>"
+    },
+    "excerpt": {
+      "rendered": "<p>Dual-peptide analytical reference for qualified laboratory research.</p>"
+    },
     "featured_media": 0,
     "acf": {
       "product_category": "GH Axis",
       "size": "10mg/10mg",
-      "purity": "≥99.9%",
+      "purity": "\u226599.9%",
       "price": 94.99,
       "currency": "USD",
       "lot_number": "LR-C1295-2608",
@@ -196,7 +258,9 @@
       "format": "Lyophilized powder",
       "image_url": null,
       "coa_url": null,
-      "featured": false
+      "featured": false,
+      "stock_quantity": 2,
+      "low_stock_threshold": 3
     }
   },
   {
@@ -206,14 +270,20 @@
     "slug": "dual-repair-stack",
     "status": "publish",
     "type": "peptide_product",
-    "title": { "rendered": "Dual Repair Stack" },
-    "content": { "rendered": "<p>Paired research compounds packaged as a coordinated analytical reference set for laboratory study.</p>" },
-    "excerpt": { "rendered": "<p>Paired research compounds packaged as a coordinated analytical reference set.</p>" },
+    "title": {
+      "rendered": "Dual Repair Stack"
+    },
+    "content": {
+      "rendered": "<p>Paired research compounds packaged as a coordinated analytical reference set for laboratory study.</p>"
+    },
+    "excerpt": {
+      "rendered": "<p>Paired research compounds packaged as a coordinated analytical reference set.</p>"
+    },
     "featured_media": 0,
     "acf": {
       "product_category": "Recovery",
       "size": "10mg/10mg",
-      "purity": "≥99.8%",
+      "purity": "\u226599.8%",
       "price": 179.99,
       "currency": "USD",
       "lot_number": "LR-DRS-2608",
@@ -221,7 +291,9 @@
       "format": "Lyophilized powder",
       "image_url": null,
       "coa_url": null,
-      "featured": false
+      "featured": false,
+      "stock_quantity": 0,
+      "low_stock_threshold": 3
     }
   },
   {
@@ -231,14 +303,20 @@
     "slug": "ipamorelin-10mg",
     "status": "publish",
     "type": "peptide_product",
-    "title": { "rendered": "Ipamorelin" },
-    "content": { "rendered": "<p>Peptide reference standard supplied for controlled receptor and signaling assay workflows.</p>" },
-    "excerpt": { "rendered": "<p>Peptide reference standard for controlled receptor and signaling assays.</p>" },
+    "title": {
+      "rendered": "Ipamorelin"
+    },
+    "content": {
+      "rendered": "<p>Peptide reference standard supplied for controlled receptor and signaling assay workflows.</p>"
+    },
+    "excerpt": {
+      "rendered": "<p>Peptide reference standard for controlled receptor and signaling assays.</p>"
+    },
     "featured_media": 0,
     "acf": {
       "product_category": "Research",
       "size": "10mg",
-      "purity": "≥99.8%",
+      "purity": "\u226599.8%",
       "price": 54.99,
       "currency": "USD",
       "lot_number": "LR-IPA-2608",
@@ -246,7 +324,9 @@
       "format": "Lyophilized powder",
       "image_url": null,
       "coa_url": null,
-      "featured": false
+      "featured": false,
+      "stock_quantity": 10,
+      "low_stock_threshold": 3
     }
   },
   {
@@ -256,14 +336,20 @@
     "slug": "tb-500-5mg",
     "status": "publish",
     "type": "peptide_product",
-    "title": { "rendered": "TB-500" },
-    "content": { "rendered": "<p>Research reference peptide supplied for controlled analytical and in-vitro laboratory workflows.</p>" },
-    "excerpt": { "rendered": "<p>Research reference peptide for controlled analytical and in-vitro workflows.</p>" },
+    "title": {
+      "rendered": "TB-500"
+    },
+    "content": {
+      "rendered": "<p>Research reference peptide supplied for controlled analytical and in-vitro laboratory workflows.</p>"
+    },
+    "excerpt": {
+      "rendered": "<p>Research reference peptide for controlled analytical and in-vitro workflows.</p>"
+    },
     "featured_media": 0,
     "acf": {
       "product_category": "Research",
       "size": "5mg",
-      "purity": "≥99.7%",
+      "purity": "\u226599.7%",
       "price": 44.99,
       "currency": "USD",
       "lot_number": "LR-TB5-2608",
@@ -271,7 +357,9 @@
       "format": "Lyophilized powder",
       "image_url": null,
       "coa_url": null,
-      "featured": false
+      "featured": false,
+      "stock_quantity": 10,
+      "low_stock_threshold": 3
     }
   },
   {
@@ -281,14 +369,20 @@
     "slug": "pt-141-10mg",
     "status": "publish",
     "type": "peptide_product",
-    "title": { "rendered": "PT-141" },
-    "content": { "rendered": "<p>Research peptide standard supplied for qualified non-clinical laboratory and analytical use.</p>" },
-    "excerpt": { "rendered": "<p>Research peptide standard for qualified non-clinical laboratory use.</p>" },
+    "title": {
+      "rendered": "PT-141"
+    },
+    "content": {
+      "rendered": "<p>Research peptide standard supplied for qualified non-clinical laboratory and analytical use.</p>"
+    },
+    "excerpt": {
+      "rendered": "<p>Research peptide standard for qualified non-clinical laboratory use.</p>"
+    },
     "featured_media": 0,
     "acf": {
       "product_category": "Research",
       "size": "10mg",
-      "purity": "≥99.8%",
+      "purity": "\u226599.8%",
       "price": 69.99,
       "currency": "USD",
       "lot_number": "LR-PT141-2608",
@@ -296,7 +390,9 @@
       "format": "Lyophilized powder",
       "image_url": null,
       "coa_url": null,
-      "featured": false
+      "featured": false,
+      "stock_quantity": 10,
+      "low_stock_threshold": 3
     }
   }
 ]

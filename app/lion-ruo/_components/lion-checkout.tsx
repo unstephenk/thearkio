@@ -36,6 +36,11 @@ export function LionCheckout({ products, content }: Props) {
     setHydrated(true);
   }, []);
 
+  useEffect(() => {
+    if (!hydrated) return;
+    writeCart(cart);
+  }, [cart, hydrated]);
+
   const lines: DetailedLine[] = useMemo(
     () =>
       cart.flatMap((line) => {
@@ -47,10 +52,37 @@ export function LionCheckout({ products, content }: Props) {
 
   const total = lines.reduce((sum, line) => sum + line.product.price * line.quantity, 0);
   const currency = lines[0]?.product.currency ?? "USD";
+  const inventoryIssues = lines.filter(
+    (line) => !line.product.inStock || line.quantity > line.product.stockQuantity,
+  );
+  const hasInventoryIssue = inventoryIssues.length > 0;
+
+  const changeQuantity = (product: Product, delta: number) => {
+    setCart((current) => {
+      const existing = current.find((line) => line.productId === product.id);
+      if (!existing) return current;
+
+      const nextQuantity = Math.min(product.stockQuantity, existing.quantity + delta);
+      if (nextQuantity <= 0) {
+        return current.filter((line) => line.productId !== product.id);
+      }
+
+      return current.map((line) =>
+        line.productId === product.id ? { ...line, quantity: nextQuantity } : line,
+      );
+    });
+  };
 
   const submitOrder = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     if (!lines.length || submitting) return;
+    if (hasInventoryIssue) {
+      setError(
+        content.checkout.inventory_error ??
+          "One or more products are no longer available in the requested quantity.",
+      );
+      return;
+    }
 
     setSubmitting(true);
     setError(null);
@@ -163,9 +195,14 @@ export function LionCheckout({ products, content }: Props) {
                     <textarea name="notes" rows={3} placeholder="Add any notes for your order" />
                   </label>
 
-                  {error && <p className={styles.formError} role="alert">{error}</p>}
+                  {hasInventoryIssue && (
+                    <p className={styles.formError} role="alert">
+                      {content.checkout.inventory_error ?? "One or more products are no longer available in the requested quantity."}
+                    </p>
+                  )}
+                  {error && !hasInventoryIssue && <p className={styles.formError} role="alert">{error}</p>}
 
-                  <button className={styles.placeOrderButton} type="submit" disabled={submitting}>
+                  <button className={styles.placeOrderButton} type="submit" disabled={submitting || hasInventoryIssue}>
                     <span>{submitting ? "Submitting…" : content.checkout.submit_label}</span>
                     <LockIcon className={styles.buttonIcon} />
                   </button>
@@ -186,8 +223,24 @@ export function LionCheckout({ products, content }: Props) {
                         <strong>{line.product.name}</strong>
                         <span>{line.product.size}</span>
                         <p>{line.product.description}</p>
+                        {(!line.product.inStock || line.quantity > line.product.stockQuantity) && (
+                          <span className={styles.orderInventoryWarning}>
+                            {!line.product.inStock
+                              ? "Sold out"
+                              : `Only ${line.product.stockQuantity} currently available`}
+                          </span>
+                        )}
                       </div>
-                      <span className={styles.orderQty}>× {line.quantity}</span>
+                      <div className={styles.orderQtyControl} aria-label={`Quantity for ${line.product.name}`}>
+                        <button type="button" onClick={() => changeQuantity(line.product, -1)} aria-label={`Decrease ${line.product.name} quantity`}>−</button>
+                        <span>{line.quantity}</span>
+                        <button
+                          type="button"
+                          onClick={() => changeQuantity(line.product, 1)}
+                          disabled={!line.product.inStock || line.quantity >= line.product.stockQuantity}
+                          aria-label={`Increase ${line.product.name} quantity`}
+                        >+</button>
+                      </div>
                       <strong className={styles.orderPrice}>
                         {formatMoney(line.product.price * line.quantity, line.product.currency)}
                       </strong>

@@ -122,3 +122,60 @@ Add an ACF group to the `lion-home` page for:
 - `newsletter.error_text`
 
 The signup destination is intentionally separate from content retrieval. A custom WordPress REST endpoint such as `/wp-json/lion/v1/newsletter` can accept the submitted email and enroll it in the client's approved mailing-list workflow.
+
+## Inventory fields added in the next pass
+
+Each `peptide_product` now includes inventory fields inside `acf`:
+
+```json
+{
+  "stock_quantity": 12,
+  "low_stock_threshold": 3
+}
+```
+
+The frontend derives stock state automatically:
+
+- `stock_quantity > 0` → product can be added to checkout.
+- `stock_quantity <= low_stock_threshold` → product shows a low-stock label.
+- `stock_quantity === 0` → product automatically renders as **Sold out** and the add button is disabled.
+
+This means WordPress only needs one editable inventory quantity per product. The React frontend should not require a separate manually-maintained Sold Out switch.
+
+For the preview, inventory values are static JSON. In production, `lib/lion-ruo/content.ts` is the adapter layer to replace with a WordPress fetch.
+
+## Individual product pages
+
+Each published product now gets a route based on the WordPress slug:
+
+```text
+/lion-ruo/products/{slug}
+```
+
+Examples:
+
+```text
+/lion-ruo/products/nad-plus-500mg
+/lion-ruo/products/ghk-cu-50mg
+```
+
+The detail page consumes the same WordPress product record and displays the full content field, image, price, size, purity, lot, storage, inventory state, and COA link.
+
+## Age gate fields
+
+The `lion-home` page content now includes an `age_gate` group:
+
+```json
+{
+  "enabled": true,
+  "minimum_age": 18,
+  "heading": "Age confirmation required",
+  "description": "...",
+  "confirm_label": "I am 18 or older",
+  "leave_label": "Leave site",
+  "leave_href": "https://www.google.com/",
+  "storage_days": 30
+}
+```
+
+The age value and wording are intentionally content-managed so the client can approve the final requirement before launch. The current `18` value is preview content, not a legal determination.

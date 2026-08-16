@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
+import { LionAgeGate } from "@/app/lion-ruo/_components/lion-age-gate";
+import { lionSiteContent } from "@/lib/lion-ruo/content";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,5 +31,12 @@ export const metadata: Metadata = {
 };
 
 export default function LionRuoLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <div className={`${inter.variable} ${space.variable}`}>{children}</div>;
+  const content = lionSiteContent.acf;
+
+  return (
+    <div className={`${inter.variable} ${space.variable}`}>
+      {content.age_gate && <LionAgeGate content={content.age_gate} brand={content.brand} />}
+      {children}
+    </div>
+  );
 }

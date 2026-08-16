@@ -70,9 +70,11 @@ export function LionStorefront({ products, faqs, content }: Props) {
   }, [page, perPage, products]);
 
   const addToCheckout = (product: Product) => {
+    const currentQuantity = cart.find((line) => line.productId === product.id)?.quantity ?? 0;
+    if (!product.inStock || currentQuantity >= product.stockQuantity) return;
+
     setCart((current) => {
       const existing = current.find((line) => line.productId === product.id);
-
       return existing
         ? current.map((line) =>
             line.productId === product.id ? { ...line, quantity: line.quantity + 1 } : line,
@@ -154,46 +156,69 @@ export function LionStorefront({ products, faqs, content }: Props) {
             </div>
 
             <div className={styles.catalogGrid}>
-              {visibleProducts.map((product) => (
-                <article className={styles.productCard} key={product.id}>
-                  <div className={styles.productMedia}>
-                    <ProductThumb image={product.image} name={product.name} />
-                    <span className={styles.purityBadge}>{product.purity} purity</span>
-                  </div>
+              {visibleProducts.map((product) => {
+                const quantityInCart = cart.find((line) => line.productId === product.id)?.quantity ?? 0;
+                const canAdd = product.inStock && quantityInCart < product.stockQuantity;
+                const lowStock = product.inStock && product.stockQuantity <= product.lowStockThreshold;
 
-                  <div className={styles.productBody}>
-                    <span className={styles.productCategory}>{product.category}</span>
-                    <h3>{product.name}</h3>
-                    <p>{product.description}</p>
+                return (
+                  <article className={`${styles.productCard} ${!product.inStock ? styles.productCardSoldOut : ""}`} key={product.id}>
+                    <Link href={`/lion-ruo/products/${product.slug}`} className={styles.productMediaLink} aria-label={`View ${product.name}`}>
+                      <div className={styles.productMedia}>
+                        <ProductThumb image={product.image} name={product.name} />
+                        <span className={styles.purityBadge}>{product.purity} purity</span>
+                        {!product.inStock && <span className={styles.soldOutOverlay}>{content.catalog.sold_out_label ?? "Sold out"}</span>}
+                      </div>
+                    </Link>
 
-                    <dl className={styles.productMeta}>
-                      <div>
-                        <dt>Size</dt>
-                        <dd>{product.size}</dd>
+                    <div className={styles.productBody}>
+                      <div className={styles.productCardTopline}>
+                        <span className={styles.productCategory}>{product.category}</span>
+                        <span className={`${styles.stockText} ${!product.inStock ? styles.stockTextSoldOut : lowStock ? styles.stockTextLow : ""}`}>
+                          {!product.inStock
+                            ? content.catalog.sold_out_label ?? "Sold out"
+                            : lowStock
+                              ? `${content.catalog.low_stock_label ?? "Low stock"} · ${product.stockQuantity} left`
+                              : content.catalog.in_stock_label ?? "In stock"}
+                        </span>
                       </div>
-                      <div>
-                        <dt>Lot</dt>
-                        <dd>{product.lotNumber}</dd>
-                      </div>
-                    </dl>
+                      <h3><Link href={`/lion-ruo/products/${product.slug}`}>{product.name}</Link></h3>
+                      <p>{product.description}</p>
 
-                    <div className={styles.productFooter}>
-                      <div>
-                        <strong>{formatPrice(product)}</strong>
-                        <span>{product.currency}</span>
+                      <dl className={styles.productMeta}>
+                        <div>
+                          <dt>Size</dt>
+                          <dd>{product.size}</dd>
+                        </div>
+                        <div>
+                          <dt>Lot</dt>
+                          <dd>{product.lotNumber}</dd>
+                        </div>
+                      </dl>
+
+                      <Link href={`/lion-ruo/products/${product.slug}`} className={styles.productDetailsLink}>
+                        View details →
+                      </Link>
+
+                      <div className={styles.productFooter}>
+                        <div>
+                          <strong>{formatPrice(product)}</strong>
+                          <span>{product.currency}</span>
+                        </div>
+                        <button
+                          type="button"
+                          className={styles.addButton}
+                          onClick={() => addToCheckout(product)}
+                          aria-label={product.inStock ? `Add ${product.name} to checkout` : `${product.name} is sold out`}
+                          disabled={!canAdd}
+                        >
+                          <PlusIcon />
+                        </button>
                       </div>
-                      <button
-                        type="button"
-                        className={styles.addButton}
-                        onClick={() => addToCheckout(product)}
-                        aria-label={`Add ${product.name} to checkout`}
-                      >
-                        <PlusIcon />
-                      </button>
                     </div>
-                  </div>
-                </article>
-              ))}
+                  </article>
+                );
+              })}
             </div>
 
             <nav className={styles.pagination} aria-label="Catalog pagination">

@@ -25,6 +25,8 @@ export type WordpressProduct = {
     image_url: string | null;
     coa_url: string | null;
     featured: boolean;
+    stock_quantity?: number | string;
+    low_stock_threshold?: number | string;
   };
 };
 
@@ -33,6 +35,7 @@ export type Product = {
   slug: string;
   name: string;
   description: string;
+  longDescription: string;
   category: string;
   size: string;
   purity: string;
@@ -44,6 +47,9 @@ export type Product = {
   image: string | null;
   coaUrl: string | null;
   featured: boolean;
+  stockQuantity: number;
+  lowStockThreshold: number;
+  inStock: boolean;
 };
 
 export type WordpressFaq = {
@@ -78,6 +84,16 @@ export type SiteContentDocument = {
       logo_url: string;
     };
     navigation: Array<{ label: string; href: string }>;
+    age_gate: {
+      enabled: boolean;
+      minimum_age: number;
+      heading: string;
+      description: string;
+      confirm_label: string;
+      leave_label: string;
+      leave_href: string;
+      storage_days: number;
+    };
     hero: {
       eyebrow: string;
       title: string;
@@ -97,6 +113,9 @@ export type SiteContentDocument = {
       heading: string;
       description: string;
       per_page: number;
+      in_stock_label?: string;
+      sold_out_label?: string;
+      low_stock_label?: string;
     };
     verification_cards: Array<{
       icon: "certificate" | "shield" | "flask";
@@ -111,6 +130,7 @@ export type SiteContentDocument = {
       submit_label: string;
       success_heading: string;
       success_text: string;
+      inventory_error?: string;
     };
     newsletter: {
       heading: string;

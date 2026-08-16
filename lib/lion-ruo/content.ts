@@ -20,27 +20,44 @@ const decodeEntities = (value: string) =>
 const toPlainText = (value: string) =>
   decodeEntities(value.replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim());
 
+const toNonNegativeInteger = (value: number | string | undefined, fallback = 0) => {
+  const parsed = Number(value);
+  return Number.isFinite(parsed) ? Math.max(0, Math.floor(parsed)) : fallback;
+};
+
 export const lionSiteContent = siteSource as SiteContentDocument;
 
 export const lionProducts: Product[] = (productSource as WordpressProduct[])
   .filter((product) => product.status === "publish")
-  .map((product) => ({
-    id: product.id,
-    slug: product.slug,
-    name: toPlainText(product.title.rendered),
-    description: toPlainText(product.excerpt.rendered || product.content.rendered),
-    category: product.acf.product_category,
-    size: product.acf.size,
-    purity: product.acf.purity,
-    price: Number(product.acf.price),
-    currency: product.acf.currency,
-    lotNumber: product.acf.lot_number,
-    storage: product.acf.storage,
-    format: product.acf.format,
-    image: product.acf.image_url,
-    coaUrl: product.acf.coa_url,
-    featured: product.acf.featured,
-  }));
+  .map((product) => {
+    const stockQuantity = toNonNegativeInteger(product.acf.stock_quantity, 10);
+    const lowStockThreshold = toNonNegativeInteger(product.acf.low_stock_threshold, 3);
+
+    return {
+      id: product.id,
+      slug: product.slug,
+      name: toPlainText(product.title.rendered),
+      description: toPlainText(product.excerpt.rendered || product.content.rendered),
+      longDescription: toPlainText(product.content.rendered || product.excerpt.rendered),
+      category: product.acf.product_category,
+      size: product.acf.size,
+      purity: product.acf.purity,
+      price: Number(product.acf.price),
+      currency: product.acf.currency,
+      lotNumber: product.acf.lot_number,
+      storage: product.acf.storage,
+      format: product.acf.format,
+      image: product.acf.image_url,
+      coaUrl: product.acf.coa_url,
+      featured: product.acf.featured,
+      stockQuantity,
+      lowStockThreshold,
+      inStock: stockQuantity > 0,
+    };
+  });
+
+export const getLionProductBySlug = (slug: string) =>
+  lionProducts.find((product) => product.slug === slug);
 
 export const lionFaqs: Faq[] = (faqSource as WordpressFaq[])
   .filter((faq) => faq.status === "publish")

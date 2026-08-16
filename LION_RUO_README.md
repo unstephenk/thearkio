@@ -124,3 +124,22 @@ The browser will POST:
 ```
 
 The endpoint can be a custom WordPress REST route, an email marketing platform proxy, or another client-approved subscriber workflow.
+
+## Next-pass features: inventory, product pages, age gate
+
+This package now adds:
+
+- WordPress-shaped `stock_quantity` and `low_stock_threshold` fields on every product.
+- Automatic **Sold out** behavior when inventory reaches zero.
+- Low-stock messaging when quantity reaches the configured threshold.
+- Per-product pages at `/lion-ruo/products/[slug]`.
+- A site-wide configurable age-confirmation modal for all `/lion-ruo` routes.
+- Checkout inventory validation so a stale cart cannot submit a product that is now sold out or above the available quantity.
+
+### Important production behavior
+
+The preview does **not** automatically decrement inventory when an order request is submitted. That is intentional because the current checkout does not collect payment. In production, inventory should be reduced/reserved only after the client's chosen order-confirmation/payment workflow defines when an order becomes committed.
+
+### Age gate
+
+The age gate currently uses a sample minimum age of `18` from `site-content.json`. This should be changed to the client's approved minimum age and final wording before launch.
