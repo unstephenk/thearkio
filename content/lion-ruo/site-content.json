@@ -21,12 +21,12 @@
         "href": "#catalog"
       },
       {
-        "label": "Verification",
-        "href": "#verification"
+        "label": "Info",
+        "href": "/lion-ruo/info"
       },
       {
-        "label": "FAQ",
-        "href": "#faq"
+        "label": "Contact",
+        "href": "/lion-ruo/contact"
       }
     ],
     "age_gate": {
@@ -132,12 +132,33 @@
               "href": "#catalog"
             },
             {
-              "label": "All products",
-              "href": "#catalog"
+              "label": "Checkout",
+              "href": "/lion-ruo/checkout"
             },
             {
-              "label": "New arrivals",
-              "href": "#catalog"
+              "label": "Verification",
+              "href": "#verification"
+            }
+          ]
+        },
+        {
+          "heading": "Info",
+          "links": [
+            {
+              "label": "Information",
+              "href": "/lion-ruo/info"
+            },
+            {
+              "label": "Quality & Testing",
+              "href": "/lion-ruo/info#quality-testing"
+            },
+            {
+              "label": "COAs",
+              "href": "/lion-ruo/info#coa"
+            },
+            {
+              "label": "FAQ",
+              "href": "#faq"
             }
           ]
         },
@@ -145,33 +166,37 @@
           "heading": "Support",
           "links": [
             {
-              "label": "Verification",
-              "href": "#verification"
-            },
-            {
-              "label": "FAQ",
-              "href": "#faq"
-            },
-            {
               "label": "Contact",
-              "href": "mailto:info@lionruopeptides.com"
+              "href": "/lion-ruo/contact"
+            },
+            {
+              "label": "Order Questions",
+              "href": "/lion-ruo/contact"
+            },
+            {
+              "label": "Wholesale / Bulk",
+              "href": "/lion-ruo/contact"
             }
           ]
         },
         {
-          "heading": "Company",
+          "heading": "Legal",
           "links": [
             {
-              "label": "About",
-              "href": "#verification"
+              "label": "Research Use Policy",
+              "href": "/lion-ruo/legal#research-use"
             },
             {
-              "label": "Quality",
-              "href": "#verification"
+              "label": "Terms",
+              "href": "/lion-ruo/legal#terms"
             },
             {
-              "label": "Privacy Policy",
-              "href": "#"
+              "label": "Privacy",
+              "href": "/lion-ruo/legal#privacy"
+            },
+            {
+              "label": "Shipping & Returns",
+              "href": "/lion-ruo/legal#shipping"
             }
           ]
         }

@@ -5,7 +5,7 @@ import styles from "../lion-ruo.module.css";
 
 type SiteContent = SiteContentDocument["acf"];
 
-export function LionFooter({ content, checkout = false }: { content: SiteContent; checkout?: boolean }) {
+export function LionFooter({ content, checkout: _checkout = false }: { content: SiteContent; checkout?: boolean }) {
   return (
     <footer className={styles.footer}>
       <div className={styles.shell}>
@@ -19,7 +19,7 @@ export function LionFooter({ content, checkout = false }: { content: SiteContent
             <div key={group.heading} className={styles.footerColumn}>
               <h3>{group.heading}</h3>
               {group.links.map((link) => {
-                const href = checkout && link.href.startsWith("#") ? `/lion-ruo${link.href}` : link.href;
+                const href = link.href.startsWith("#") ? `/lion-ruo${link.href}` : link.href;
                 return (
                   <Link key={`${group.heading}-${link.label}`} href={href}>
                     {link.label}

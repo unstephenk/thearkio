@@ -10,7 +10,7 @@ import styles from "../lion-ruo.module.css";
 
 type SiteContent = SiteContentDocument["acf"];
 
-export function LionHeader({ content, checkout = false }: { content: SiteContent; checkout?: boolean }) {
+export function LionHeader({ content, checkout: _checkout = false }: { content: SiteContent; checkout?: boolean }) {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -34,7 +34,7 @@ export function LionHeader({ content, checkout = false }: { content: SiteContent
             {content.navigation.map((item) => (
               <Link
                 key={item.label}
-                href={checkout ? `/lion-ruo${item.href}` : item.href}
+                href={item.href.startsWith("#") ? `/lion-ruo${item.href}` : item.href}
                 className={styles.navLink}
               >
                 {item.label}

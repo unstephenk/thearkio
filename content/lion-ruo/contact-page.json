@@ -1,0 +1,28 @@
+{
+  "status": "publish",
+  "type": "page",
+  "content": {
+    "rendered": ""
+  },
+  "id": 203,
+  "slug": "lion-contact",
+  "title": {
+    "rendered": "Contact"
+  },
+  "acf": {
+    "eyebrow": "Contact",
+    "heading": "Questions about an order, product, or document?",
+    "intro": "Send a message to Lion RUO. The production form can route through Resend or a WordPress endpoint once the final email workflow is connected.",
+    "email": "info@lionruopeptides.com",
+    "response_note": "Response-time wording can be updated once Lion RUO confirms its support schedule.",
+    "topics": [
+      "General question",
+      "Order question",
+      "Product / COA question",
+      "Wholesale / bulk",
+      "Website issue"
+    ],
+    "success_text": "Thanks \u2014 your message has been received. In production, this confirmation will follow a successful Resend or WordPress submission.",
+    "error_text": "We could not send your message. Please try again or email us directly."
+  }
+}

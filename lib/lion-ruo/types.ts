@@ -157,3 +157,65 @@ export type CartLine = {
   productId: number;
   quantity: number;
 };
+
+export type InfoPageDocument = {
+  id: number;
+  slug: "lion-info";
+  status: "publish" | "draft";
+  type: "page";
+  title: WordpressRendered;
+  content: WordpressRendered;
+  acf: {
+    eyebrow: string;
+    heading: string;
+    intro: string;
+    review_note?: string;
+    sections: Array<{
+      id: string;
+      title: string;
+      description: string;
+      items?: string[];
+    }>;
+  };
+};
+
+export type ContactPageDocument = {
+  id: number;
+  slug: "lion-contact";
+  status: "publish" | "draft";
+  type: "page";
+  title: WordpressRendered;
+  content: WordpressRendered;
+  acf: {
+    eyebrow: string;
+    heading: string;
+    intro: string;
+    email: string;
+    response_note: string;
+    topics: string[];
+    success_text: string;
+    error_text: string;
+  };
+};
+
+export type LegalPageDocument = {
+  id: number;
+  slug: "lion-legal";
+  status: "publish" | "draft";
+  type: "page";
+  title: WordpressRendered;
+  content: WordpressRendered;
+  acf: {
+    eyebrow: string;
+    heading: string;
+    intro: string;
+    review_note: string;
+    sections: Array<{
+      id: string;
+      title: string;
+      paragraphs: string[];
+      items?: string[];
+    }>;
+  };
+};
+

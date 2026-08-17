@@ -36,7 +36,8 @@
 
 .lionSite button,
 .lionSite input,
-.lionSite textarea {
+.lionSite textarea,
+.lionSite select {
   font: inherit;
 }
 
@@ -686,8 +687,8 @@
 .footerGrid {
   padding: 48px 0 40px;
   display: grid;
-  grid-template-columns: 1.5fr repeat(4, 1fr);
-  gap: 34px;
+  grid-template-columns: 1.45fr repeat(5, 1fr);
+  gap: 24px;
 }
 
 .footerBrandColumn p {
@@ -1972,4 +1973,570 @@
   color: var(--text);
   font-size: 0.74rem;
   text-align: center;
+}
+
+/* Supporting pages: Info / Contact / Legal */
+.internalHero {
+  position: relative;
+  min-height: 330px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background:
+    linear-gradient(90deg, rgba(7, 11, 13, 0.98), rgba(7, 11, 13, 0.78)),
+    var(--bg-deep);
+}
+
+.internalHeroGlow {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  right: -120px;
+  top: -300px;
+  border-radius: 50%;
+  background: rgba(151, 231, 190, 0.1);
+  filter: blur(90px);
+  pointer-events: none;
+}
+
+.internalHero .shell {
+  position: relative;
+  z-index: 1;
+  padding-top: 64px;
+  padding-bottom: 64px;
+}
+
+.internalHero h1 {
+  max-width: 850px;
+  margin: 13px 0 18px;
+  font-family: var(--font-lion-display), Arial, sans-serif;
+  font-size: clamp(2.6rem, 5.2vw, 5rem);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+}
+
+.internalHero p {
+  max-width: 68ch;
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 0.98rem;
+  line-height: 1.72;
+}
+
+.reviewBanner {
+  margin-top: 28px;
+  padding: 15px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  border: 1px solid rgba(240, 201, 108, 0.28);
+  background: rgba(240, 201, 108, 0.055);
+  color: var(--text-dim);
+  font-size: 0.76rem;
+  line-height: 1.55;
+}
+
+.reviewBanner strong {
+  flex: 0 0 auto;
+  color: #f0c96c;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.infoPageSection,
+.contactPageSection,
+.legalPageSection {
+  padding: 68px 0 86px;
+}
+
+.infoPageLayout,
+.legalPageLayout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 58px;
+  align-items: start;
+}
+
+.infoSideNav,
+.legalSideNav {
+  position: sticky;
+  top: 108px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.infoSideNav > span,
+.legalSideNav > span {
+  margin-bottom: 8px;
+  color: var(--text-faint);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.infoSideNav a,
+.legalSideNav a {
+  color: var(--text-dim) !important;
+  font-size: 0.77rem;
+  line-height: 1.4;
+}
+
+.infoSideNav a:hover,
+.legalSideNav a:hover {
+  color: var(--mint) !important;
+}
+
+.infoSections {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.infoSectionCard {
+  min-height: 310px;
+  padding: 31px;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 22px;
+  scroll-margin-top: 110px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(14, 21, 25, 0.64);
+}
+
+.infoSectionIcon {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--line-strong);
+  color: var(--mint);
+}
+
+.infoSectionIcon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.infoSectionNumber,
+.legalSectionNumber {
+  color: var(--mint-dark);
+  font-family: var(--font-lion-display), Arial, sans-serif;
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.infoSectionCard h2,
+.legalSection h2 {
+  margin: 8px 0 12px;
+  font-family: var(--font-lion-display), Arial, sans-serif;
+  font-size: 1.45rem;
+  line-height: 1.1;
+}
+
+.infoSectionCard p,
+.legalSection p {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 0.82rem;
+  line-height: 1.7;
+}
+
+.infoSectionCard ul,
+.legalSection ul {
+  margin: 17px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  list-style: none;
+}
+
+.infoSectionCard li,
+.legalSection li {
+  position: relative;
+  padding-left: 16px;
+  color: var(--text-faint);
+  font-size: 0.73rem;
+  line-height: 1.55;
+}
+
+.infoSectionCard li::before,
+.legalSection li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.58em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--mint);
+}
+
+.pageCtaBand {
+  padding: 52px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(14, 21, 25, 0.78);
+}
+
+.pageCtaInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.pageCtaInner h2 {
+  max-width: 720px;
+  margin: 10px 0 0;
+  font-family: var(--font-lion-display), Arial, sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.5rem);
+  line-height: 1.08;
+}
+
+.pageCtaInner .primaryButton {
+  flex: 0 0 auto;
+  padding: 0 22px;
+}
+
+.contactPageGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.65fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.contactFormCard,
+.contactInfoCard,
+.researchOnlyNote {
+  border: 1px solid var(--line);
+  background: rgba(14, 21, 25, 0.74);
+}
+
+.contactFormCard {
+  padding: 34px;
+}
+
+.contactCardHeading {
+  margin-bottom: 27px;
+}
+
+.contactCardHeading h2 {
+  margin: 8px 0 0;
+  font-family: var(--font-lion-display), Arial, sans-serif;
+  font-size: 2rem;
+  letter-spacing: -0.025em;
+}
+
+.contactForm {
+  display: grid;
+  gap: 18px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.contactForm label {
+  display: grid;
+  gap: 8px;
+}
+
+.contactForm label > span {
+  color: var(--text-dim);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.contactForm label em {
+  color: var(--text-faint);
+  font-size: 0.65rem;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.contactForm input,
+.contactForm select,
+.contactForm textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  outline: none;
+  background: #091014;
+  color: var(--text);
+}
+
+.contactForm input,
+.contactForm select {
+  min-height: 48px;
+  padding: 0 13px;
+}
+
+.contactForm textarea {
+  min-height: 170px;
+  padding: 13px;
+  resize: vertical;
+}
+
+.contactForm input:focus,
+.contactForm select:focus,
+.contactForm textarea:focus {
+  border-color: var(--line-strong);
+}
+
+.contactSubmit,
+.contactSuccess button {
+  min-height: 50px;
+  padding: 0 22px;
+  border: 1px solid var(--mint);
+  background: var(--mint);
+  color: #04110a;
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.contactSubmit:hover:not(:disabled),
+.contactSuccess button:hover {
+  background: var(--mint-bright);
+}
+
+.contactSubmit:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.formError {
+  margin: 0;
+  color: var(--danger);
+  font-size: 0.75rem;
+}
+
+.contactSuccess {
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.contactSuccess > svg {
+  width: 38px;
+  height: 38px;
+  margin-bottom: 18px;
+  color: var(--mint);
+}
+
+.contactSuccess h3 {
+  margin: 0 0 10px;
+  font-family: var(--font-lion-display), Arial, sans-serif;
+  font-size: 2rem;
+}
+
+.contactSuccess p {
+  max-width: 58ch;
+  margin: 0 0 24px;
+  color: var(--text-dim);
+  line-height: 1.65;
+}
+
+.contactInfoColumn {
+  display: grid;
+  gap: 14px;
+}
+
+.contactInfoCard,
+.researchOnlyNote {
+  padding: 24px;
+}
+
+.contactInfoCard > svg {
+  width: 26px;
+  height: 26px;
+  margin-bottom: 18px;
+  color: var(--mint);
+}
+
+.contactInfoCard > span {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--text-faint);
+  font-size: 0.64rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.contactInfoCard > a {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--mint) !important;
+  font-size: 0.9rem;
+  overflow-wrap: anywhere;
+}
+
+.contactInfoCard p,
+.researchOnlyNote p {
+  margin: 0;
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+
+.researchOnlyNote strong {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text);
+  font-size: 0.76rem;
+}
+
+.legalReviewBanner {
+  align-items: center;
+}
+
+.legalReviewBanner > svg {
+  width: 27px;
+  height: 27px;
+  flex: 0 0 auto;
+  color: #f0c96c;
+}
+
+.legalReviewBanner > div {
+  display: grid;
+  gap: 3px;
+}
+
+.legalReviewBanner strong {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.76rem;
+}
+
+.legalSections {
+  border-top: 1px solid var(--line);
+}
+
+.legalSection {
+  padding: 34px 0 40px;
+  scroll-margin-top: 110px;
+  border-bottom: 1px solid var(--line);
+}
+
+.legalSection h2 {
+  font-size: 1.65rem;
+}
+
+.legalSection p + p {
+  margin-top: 14px;
+}
+
+.legalSection ul {
+  max-width: 78ch;
+}
+
+@media (max-width: 1050px) {
+  .footerGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .footerBrandColumn {
+    grid-column: 1 / -1;
+  }
+
+  .infoPageLayout,
+  .legalPageLayout {
+    grid-template-columns: 180px minmax(0, 1fr);
+    gap: 34px;
+  }
+}
+
+@media (max-width: 760px) {
+  .internalHero {
+    min-height: 285px;
+  }
+
+  .internalHero .shell {
+    padding-top: 52px;
+    padding-bottom: 52px;
+  }
+
+  .reviewBanner {
+    flex-direction: column;
+  }
+
+  .infoPageSection,
+  .contactPageSection,
+  .legalPageSection {
+    padding: 48px 0 66px;
+  }
+
+  .infoPageLayout,
+  .legalPageLayout,
+  .contactPageGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .infoSideNav,
+  .legalSideNav {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 7px 16px;
+  }
+
+  .infoSideNav > span,
+  .legalSideNav > span {
+    width: 100%;
+  }
+
+  .infoSections {
+    grid-template-columns: 1fr;
+  }
+
+  .infoSectionCard {
+    min-height: 0;
+  }
+
+  .pageCtaInner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+
+  .contactFormCard {
+    padding: 26px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .internalHero h1 {
+    font-size: 2.5rem;
+  }
+
+  .infoSectionCard {
+    padding: 24px 20px;
+    grid-template-columns: 1fr;
+  }
+
+  .footerGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .footerBrandColumn {
+    grid-column: auto;
+  }
 }

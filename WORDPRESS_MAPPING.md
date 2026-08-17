@@ -179,3 +179,116 @@ The `lion-home` page content now includes an `age_gate` group:
 ```
 
 The age value and wording are intentionally content-managed so the client can approve the final requirement before launch. The current `18` value is preview content, not a legal determination.
+
+## Supporting pages added: Info, Contact, Legal
+
+The client requested a small number of true subpages in addition to the catalog/product pages. The preview now includes:
+
+```text
+/lion-ruo/info
+/lion-ruo/contact
+/lion-ruo/legal
+```
+
+The static fallback content is intentionally stored as separate WordPress-shaped Page records:
+
+```text
+content/lion-ruo/info-page.json      -> slug lion-info
+content/lion-ruo/contact-page.json   -> slug lion-contact
+content/lion-ruo/legal-page.json     -> slug lion-legal
+```
+
+In WordPress, create normal Pages with those same slugs so the client sees three obvious editable pages in the dashboard.
+
+Suggested REST queries:
+
+```text
+/wp-json/wp/v2/pages?slug=lion-info
+/wp-json/wp/v2/pages?slug=lion-contact
+/wp-json/wp/v2/pages?slug=lion-legal
+```
+
+### Info page ACF
+
+Recommended fields:
+
+- `eyebrow`
+- `heading`
+- `intro`
+- `review_note`
+- `sections` repeater
+  - `id`
+  - `title`
+  - `description`
+  - `items` repeater/text list
+
+Suggested section IDs currently used by the frontend:
+
+```text
+about
+quality-testing
+coa
+storage-handling
+shipping
+research-use
+```
+
+### Contact page ACF
+
+Recommended fields:
+
+- `eyebrow`
+- `heading`
+- `intro`
+- `email`
+- `response_note`
+- `topics` repeater/text list
+- `success_text`
+- `error_text`
+
+The preview contact form does not expose a Resend secret in the browser. Configure a server-side/custom endpoint and set:
+
+```text
+NEXT_PUBLIC_LION_CONTACT_ENDPOINT=https://example.com/wp-json/lion/v1/contact
+```
+
+The browser POST payload is shaped like:
+
+```json
+{
+  "name": "Researcher Name",
+  "email": "researcher@example.com",
+  "topic": "Product / COA question",
+  "orderNumber": "",
+  "message": "...",
+  "source": "lion-ruo-contact"
+}
+```
+
+The WordPress endpoint can validate/spam-check the request and then trigger Resend server-side.
+
+### Legal page ACF
+
+Recommended fields:
+
+- `eyebrow`
+- `heading`
+- `intro`
+- `review_note`
+- `sections` repeater
+  - `id`
+  - `title`
+  - `paragraphs` repeater/text list
+  - `items` repeater/text list
+
+Current anchors:
+
+```text
+/lion-ruo/legal#research-use
+/lion-ruo/legal#terms
+/lion-ruo/legal#privacy
+/lion-ruo/legal#shipping
+/lion-ruo/legal#returns
+```
+
+The legal copy included in the preview is intentionally labeled as preview content. Replace it with client-approved language before production launch.

@@ -12,6 +12,10 @@ After copying, the preview routes are:
 
 ```text
 https://theark.io/lion-ruo
+https://theark.io/lion-ruo/info
+https://theark.io/lion-ruo/contact
+https://theark.io/lion-ruo/legal
+https://theark.io/lion-ruo/products/{slug}
 https://theark.io/lion-ruo/checkout
 ```
 
@@ -26,11 +30,23 @@ app/
       icons.tsx
       lion-brand.tsx
       lion-checkout.tsx
+      lion-contact-page.tsx
       lion-footer.tsx
       lion-header.tsx
+      lion-info-page.tsx
+      lion-legal-page.tsx
+      lion-product-detail.tsx
       lion-storefront.tsx
       product-thumb.tsx
     checkout/
+      page.tsx
+    contact/
+      page.tsx
+    info/
+      page.tsx
+    legal/
+      page.tsx
+    products/[slug]/
       page.tsx
     layout.tsx
     lion-ruo.module.css
@@ -41,6 +57,9 @@ content/
     products.json
     site-content.json
     faqs.json
+    info-page.json
+    contact-page.json
+    legal-page.json
 
 lib/
   lion-ruo/
@@ -143,3 +162,37 @@ The preview does **not** automatically decrement inventory when an order request
 ### Age gate
 
 The age gate currently uses a sample minimum age of `18` from `site-content.json`. This should be changed to the client's approved minimum age and final wording before launch.
+
+## Supporting pages: Info, Contact, Legal
+
+The client-requested subpages are now built:
+
+```text
+http://localhost:3000/lion-ruo/info
+http://localhost:3000/lion-ruo/contact
+http://localhost:3000/lion-ruo/legal
+```
+
+The top navigation now uses **Catalog / Info / Contact**. Legal and policy links live in the footer so the main navigation stays compact.
+
+### Info
+
+Includes structured sections for About, Quality & Testing, COAs, Storage & Handling, Shipping & Fulfillment, and Research Use Only. Copy is separated into `content/lion-ruo/info-page.json` so it maps naturally to a WordPress Page.
+
+### Contact
+
+Includes a real contact form layout with topic selection, optional order number, direct email information, order guidance, and wholesale/bulk routing. Without an endpoint configured, preview submission is simulated.
+
+Production endpoint:
+
+```bash
+NEXT_PUBLIC_LION_CONTACT_ENDPOINT=https://client-domain.com/wp-json/lion/v1/contact
+```
+
+Use the endpoint to keep Resend credentials server-side rather than exposing an API key in the browser.
+
+### Legal
+
+Includes permanent anchored sections for Research Use Only, Terms, Privacy, Shipping, and Returns. The included wording is explicitly preview copy and must be replaced/approved by the client before launch.
+
+The global age gate automatically covers these routes because it lives in the `/lion-ruo` layout.

@@ -1,8 +1,14 @@
+import contactPageSource from "@/content/lion-ruo/contact-page.json";
 import faqSource from "@/content/lion-ruo/faqs.json";
+import infoPageSource from "@/content/lion-ruo/info-page.json";
+import legalPageSource from "@/content/lion-ruo/legal-page.json";
 import productSource from "@/content/lion-ruo/products.json";
 import siteSource from "@/content/lion-ruo/site-content.json";
 import type {
+  ContactPageDocument,
   Faq,
+  InfoPageDocument,
+  LegalPageDocument,
   Product,
   SiteContentDocument,
   WordpressFaq,
@@ -26,6 +32,9 @@ const toNonNegativeInteger = (value: number | string | undefined, fallback = 0) 
 };
 
 export const lionSiteContent = siteSource as SiteContentDocument;
+export const lionInfoContent = infoPageSource as InfoPageDocument;
+export const lionContactContent = contactPageSource as ContactPageDocument;
+export const lionLegalContent = legalPageSource as LegalPageDocument;
 
 export const lionProducts: Product[] = (productSource as WordpressProduct[])
   .filter((product) => product.status === "publish")
