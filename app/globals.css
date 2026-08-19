@@ -173,19 +173,6 @@ img, svg { max-width: 100%; }
   pointer-events:none;
 }
 .hero-vignette { position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,4,3,.88) 0%,rgba(3,4,3,.58) 43%,rgba(3,4,3,.08) 71%),linear-gradient(180deg,rgba(0,0,0,.2),transparent 44%,rgba(0,0,0,.42)); }
-.hero-side-label {
-  position:absolute;
-  z-index:3;
-  top:50%;
-  color:rgba(255,255,255,.28);
-  font-size:.49rem;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-  writing-mode:vertical-rl;
-  transform:translateY(-50%);
-}
-.hero-side-label-left { left:16px; }
-.hero-side-label-right { right:16px; transform:translateY(-50%) rotate(180deg); }
 .hero-inner { position:relative;z-index:2;min-height:max(780px,100svh);display:flex;flex-direction:column;justify-content:flex-end;padding-top:130px;padding-bottom:34px; }
 .hero-copy { max-width:810px;margin-bottom:auto;padding-top:clamp(135px,18vh,220px); }
 .hero-kicker, .mini-label, .eyebrow-row { text-transform:uppercase;letter-spacing:.14em;font-size:.66rem;font-weight:600; }
@@ -285,6 +272,44 @@ img, svg { max-width: 100%; }
 .phone-card-dark { margin-top:auto;background:#111310;color:white;padding:12px;margin-left:-2px;margin-right:-2px;border:0; }
 .phone-card-dark span { color:#777b74; }
 .project-visual-caption { display:flex;justify-content:space-between;gap:18px;color:#636660;text-transform:uppercase;letter-spacing:.14em;font-size:.48rem;margin-top:22px;padding-right:195px; }
+
+.portfolio-divider { margin-top:120px;padding-top:26px;border-top:1px solid var(--line-dark);display:flex;justify-content:space-between;gap:24px;color:#777a74;text-transform:uppercase;letter-spacing:.14em;font-size:.55rem; }
+.project-layout-secondary { padding-top:52px; }
+
+.lion-preview { min-height:535px;position:relative;overflow:hidden;padding:28px 34px 30px;display:flex;flex-direction:column;background:linear-gradient(145deg,#080b0a,#111715 58%,#080a09); }
+.lion-preview-glow { position:absolute;width:430px;height:430px;border-radius:50%;right:-120px;top:-150px;background:radial-gradient(circle,rgba(132,224,190,.22),rgba(132,224,190,0) 68%);filter:blur(6px); }
+.lion-preview-nav { position:relative;z-index:2;display:flex;justify-content:space-between;align-items:center;gap:28px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.11); }
+.lion-preview-brand { display:flex;align-items:center;gap:9px;font-size:.72rem;font-weight:700;letter-spacing:.13em; }
+.lion-preview-mark { width:25px;height:25px;border:1px solid rgba(149,232,202,.75);border-radius:50%;display:grid;place-items:center;color:#9be7ca;font-family:var(--serif);font-size:.8rem;letter-spacing:0; }
+.lion-preview-menu { font-size:.43rem;letter-spacing:.11em;color:#8d9691; }
+.lion-preview-stage { position:relative;z-index:2;display:grid;grid-template-columns:1.08fr .72fr;gap:26px;align-items:center;flex:1;min-height:360px;padding:30px 0 24px; }
+.lion-preview-copy p { margin:0 0 18px;color:#8be0c0;font-size:.46rem;letter-spacing:.18em;text-transform:uppercase; }
+.lion-preview-copy strong { display:block;font-family:var(--serif);font-weight:400;font-size:clamp(3.3rem,5.3vw,5.45rem);line-height:.84;letter-spacing:-.055em;color:#f0f2ee; }
+.lion-preview-copy > span { display:block;max-width:410px;margin-top:22px;color:#9ca39f;font-size:.67rem;line-height:1.62; }
+.lion-preview-pills { display:flex;flex-wrap:wrap;gap:7px;margin-top:22px; }
+.lion-preview-pills span { border:1px solid rgba(148,229,199,.28);border-radius:999px;padding:6px 9px;color:#b9c8c2;font-size:.48rem;letter-spacing:.04em; }
+.lion-preview-vial { position:relative;justify-self:end;width:min(100%,235px);aspect-ratio:.72;border:1px solid rgba(255,255,255,.12);overflow:hidden;background:#101412;box-shadow:0 26px 60px rgba(0,0,0,.42); }
+.lion-preview-vial img { object-fit:cover;object-position:center 49%;filter:saturate(.9) contrast(1.04); }
+.lion-preview-grid { position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.12); }
+.lion-preview-grid article { min-height:94px;padding:16px 14px 0 0;border-right:1px solid rgba(255,255,255,.09); }
+.lion-preview-grid article:not(:first-child) { padding-left:14px; }
+.lion-preview-grid article:last-child { border-right:0; }
+.lion-preview-grid article > span { display:block;color:#61b797;font-size:.42rem;letter-spacing:.14em;margin-bottom:12px; }
+.lion-preview-grid strong { display:block;font-family:var(--serif);font-size:.96rem;font-weight:400;color:#eef1ed;margin-bottom:6px; }
+.lion-preview-grid small { display:block;color:#747c77;font-size:.52rem;line-height:1.45; }
+
+.lion-phone-screen { height:100%;border-radius:18px;overflow:hidden;background:#0c100e;color:#edf2ee;padding:19px 12px 12px;display:flex;flex-direction:column; }
+.lion-phone-topline { display:flex;justify-content:space-between;font-size:.4rem;font-weight:700;letter-spacing:.13em;padding-bottom:12px;border-bottom:1px solid rgba(255,255,255,.1); }
+.lion-phone-hero { min-height:112px;background:linear-gradient(145deg,#16211d,#254d3e);margin:11px -2px;padding:17px 12px;display:flex;flex-direction:column;justify-content:center; }
+.lion-phone-hero > span { color:#9ce5ca;font-size:.31rem;letter-spacing:.15em;margin-bottom:8px; }
+.lion-phone-hero strong { font-family:var(--serif);font-weight:400;font-size:1.55rem;line-height:.9; }
+.lion-phone-hero small { color:#a9b9b2;font-size:.39rem;margin-top:8px; }
+.lion-phone-card { border-top:1px solid rgba(255,255,255,.09);padding:11px 2px 9px;display:flex;flex-direction:column;gap:4px; }
+.lion-phone-card span { color:#62bb99;font-size:.3rem;letter-spacing:.14em; }
+.lion-phone-card strong { font-family:var(--serif);font-weight:400;font-size:.7rem; }
+.lion-phone-card small { color:#757d78;font-size:.36rem; }
+.lion-phone-card-accent { margin-top:auto;background:#a4e6ce;color:#0a0e0c;padding:11px 10px;margin-left:-2px;margin-right:-2px;border:0; }
+.lion-phone-card-accent span,.lion-phone-card-accent small { color:#315649; }
 
 .project-facts { display:grid;grid-template-columns:.8fr .8fr .8fr 1.4fr;border-top:1px solid var(--line-dark);border-bottom:1px solid var(--line-dark);margin-top:88px; }
 .project-facts > div { border-right:1px solid var(--line-dark); }
@@ -440,7 +465,6 @@ img, svg { max-width: 100%; }
   .mobile-menu-meta a { color:#a7aaa3; }
   .hero-monolith { right:-2vw;opacity:.84; }
   .hero-vignette { background:linear-gradient(90deg,rgba(3,4,3,.91),rgba(3,4,3,.64) 58%,rgba(3,4,3,.18)); }
-  .hero-side-label { display:none; }
   .section-heading-grid,.project-layout,.service-area-inner,.package-layout,.faq-layout,.contact-layout { grid-template-columns:1fr; }
   .section-heading-grid { gap:28px; }
   .capability-grid { grid-template-columns:1fr 1fr; }
@@ -520,6 +544,18 @@ img, svg { max-width: 100%; }
     transform:none !important;
   }
   .project-visual-caption { padding-right:0;margin-top:22px; }
+  .portfolio-divider { margin-top:82px;flex-direction:column;gap:8px; }
+  .project-layout-secondary { padding-top:42px; }
+  .lion-preview { min-height:470px;padding:22px 19px; }
+  .lion-preview-menu { display:none; }
+  .lion-preview-stage { grid-template-columns:1fr .72fr;gap:15px;min-height:310px;padding:26px 0 18px; }
+  .lion-preview-copy strong { font-size:3.25rem; }
+  .lion-preview-copy > span { font-size:.6rem;max-width:250px; }
+  .lion-preview-pills { gap:5px;margin-top:17px; }
+  .lion-preview-pills span { padding:5px 7px;font-size:.42rem; }
+  .lion-preview-vial { width:150px; }
+  .lion-preview-grid article { min-height:85px;padding-top:13px; }
+  .lion-preview-grid small { display:none; }
   .project-facts { grid-template-columns:1fr; margin-top:48px; }
   .project-facts > div,.project-facts > div:nth-child(2) { border-right:0;border-bottom:1px solid var(--line-dark); }
   .project-facts > div:last-child { border-bottom:0; }
@@ -611,6 +647,9 @@ button,.button,.nav-cta,.menu-button { touch-action:manipulation; }
 @media (max-width:420px) {
   .hero h1 { font-size:clamp(3.1rem,15.4vw,4.55rem); }
   .project-copy h2 { font-size:3.65rem; }
+  .lion-preview-stage { grid-template-columns:1fr; }
+  .lion-preview-vial { display:none; }
+  .lion-preview-copy > span { max-width:100%; }
   .contact-copy h2 { font-size:3.55rem; }
   .mobile-nav > a:not(.mobile-cta) { font-size:clamp(1.7rem,9vw,2.5rem); }
 }

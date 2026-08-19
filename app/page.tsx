@@ -2,6 +2,7 @@ import { ContactForm } from "@/components/contact-form";
 import { FaqList } from "@/components/faq-list";
 import { Hero } from "@/components/hero";
 import { ProjectShowcase } from "@/components/project-showcase";
+import { LionProjectShowcase } from "@/components/lion-project-showcase";
 import { Reveal } from "@/components/reveal";
 import { SiteHeader } from "@/components/site-header";
 import { BrandLockup } from "@/components/brand-lockup";
@@ -52,10 +53,16 @@ const packageFeatures = [
 
 const areas = ["Dallas", "Richardson", "Plano", "Garland", "Fort Worth"];
 
-const projectFacts = [
+const jakeProjectFacts = [
   ["End-to-end", "Strategy, design + development"],
   ["WordPress", "Flexible content management"],
   ["SEO", "Search-ready structure + setup"],
+] as const;
+
+const lionProjectFacts = [
+  ["Headless", "Next.js storefront + WooCommerce backend"],
+  ["Commerce", "Inventory, checkout + order workflow"],
+  ["Launch", "DNS, email, SEO + analytics setup"],
 ] as const;
 
 export default function Home() {
@@ -185,7 +192,7 @@ export default function Home() {
             <Reveal>
               <div className="eyebrow-row eyebrow-row-dark">
                 <span>03 / Featured work</span>
-                <span>Real client · Jake Groves Music</span>
+                <span>Selected client launches</span>
               </div>
             </Reveal>
 
@@ -218,7 +225,7 @@ export default function Home() {
             </div>
 
             <div className="project-facts" aria-label="Jake Groves Music project scope">
-              {projectFacts.map(([value, label], index) => (
+              {jakeProjectFacts.map(([value, label], index) => (
                 <Reveal key={value} delay={index * 0.05}>
                   <div className="project-fact">
                     <span>{value}</span>
@@ -230,6 +237,57 @@ export default function Home() {
                 <div className="project-fact project-fact-note">
                   <span>Built to evolve</span>
                   <p>A content system Jake can keep using as his music, events, and audience grow.</p>
+                </div>
+              </Reveal>
+            </div>
+
+            <div className="portfolio-divider" aria-hidden="true">
+              <span>02 / Lion RUO Peptides</span>
+              <span>Headless commerce · Production launch</span>
+            </div>
+
+            <div className="project-layout project-layout-secondary">
+              <Reveal className="project-copy">
+                <p className="project-kicker">Lion RUO Peptides</p>
+                <h2>Research.<br />Built clean.</h2>
+                <p className="project-description">
+                  A production ecommerce storefront for a research-use-only catalog—pairing a custom
+                  Next.js frontend with WooCommerce inventory and order management, transactional email,
+                  shipping logic, technical SEO, and a decoupled WordPress backend.
+                </p>
+                <div className="tag-list" aria-label="Lion RUO Peptides project services">
+                  {["Strategy", "Web Design", "Next.js", "WooCommerce", "Headless CMS", "Vercel"].map((tag) => (
+                    <span key={tag}>{tag}</span>
+                  ))}
+                </div>
+                <a
+                  className="text-link text-link-light"
+                  href="https://lionruopeptides.com/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Visit the live site <span aria-hidden="true">↗</span>
+                </a>
+              </Reveal>
+
+              <Reveal delay={0.08}>
+                <LionProjectShowcase />
+              </Reveal>
+            </div>
+
+            <div className="project-facts" aria-label="Lion RUO Peptides project scope">
+              {lionProjectFacts.map(([value, label], index) => (
+                <Reveal key={value} delay={index * 0.05}>
+                  <div className="project-fact">
+                    <span>{value}</span>
+                    <p>{label}</p>
+                  </div>
+                </Reveal>
+              ))}
+              <Reveal delay={0.15}>
+                <div className="project-fact project-fact-note">
+                  <span>Built for operations</span>
+                  <p>The client manages products, stock, and orders in WooCommerce while the public storefront stays fast and focused.</p>
                 </div>
               </Reveal>
             </div>

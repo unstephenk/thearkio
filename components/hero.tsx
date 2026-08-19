@@ -1,25 +1,13 @@
 "use client";
 
-import {
-  motion,
-  useReducedMotion,
-  useScroll,
-  useTransform,
-  type Variants,
-} from "motion/react";
-import { useRef } from "react";
+import { motion, useReducedMotion, type Variants } from "motion/react";
 
 export function Hero() {
-  const ref = useRef<HTMLElement>(null);
   const reduceMotion = useReducedMotion();
-  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const artY = useTransform(scrollYProgress, [0, 1], [0, reduceMotion ? 0 : 90]);
-  const copyY = useTransform(scrollYProgress, [0, 1], [0, reduceMotion ? 0 : 40]);
-  const artScale = useTransform(scrollYProgress, [0, 1], [1, reduceMotion ? 1 : 1.035]);
 
   return (
-    <section id="top" ref={ref} className="hero" aria-labelledby="hero-title">
-      <motion.div className="hero-art" style={{ y: artY, scale: artScale }} aria-hidden="true">
+    <section id="top" className="hero" aria-labelledby="hero-title">
+      <div className="hero-art" aria-hidden="true">
         <div className="hero-horizon" />
         <div className="hero-sun" />
         <div className="hero-monolith">
@@ -31,16 +19,12 @@ export function Hero() {
         <div className="hero-rock hero-rock-b" />
         <div className="hero-grid-lines" />
         <div className="hero-grain" />
-      </motion.div>
+      </div>
       <div className="hero-vignette" aria-hidden="true" />
-
-      <div className="hero-side-label hero-side-label-left" aria-hidden="true">THE ARK / WEB STUDIO</div>
-      <div className="hero-side-label hero-side-label-right" aria-hidden="true">32.7767° N / DFW</div>
 
       <div className="shell hero-inner">
         <motion.div
           className="hero-copy"
-          style={{ y: copyY }}
           initial={reduceMotion ? false : "hidden"}
           animate="show"
           variants={{
